@@ -35,4 +35,16 @@ class LivrosController extends Controller
           $livro = Livro::findOrFail($id);
           return view('livros.editar', ['livro'=> $livro]);
       }
+
+    public function update(Request $request, $id) {
+        $livro = Livro::findOrFail($id);
+        $livro->update([
+            'isbn' =>$request->isbn,
+            'nome' => $request->nome,
+            'autor' => $request->autor,
+            'preco' => $request->preco
+        ]);
+    return "Livro atualizado com sucesso.";
+    }
+
 }

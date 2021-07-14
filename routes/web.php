@@ -30,3 +30,7 @@ Route::get('/livros/ver', 'LivrosController@show');
 
  Route::get('/livro/edit/{id}', 'LivrosController@edit')
  ->name('editar_livro');
+
+ Route::post('/livro/edit/{id}', 'LivrosController@update')
+ ->name('atualizar_livro');
+
